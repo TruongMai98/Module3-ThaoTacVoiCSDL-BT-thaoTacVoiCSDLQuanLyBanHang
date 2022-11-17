@@ -1,6 +1,6 @@
 use quanlybanhang;
 -- hien thi thong tin oID, oDate, oPrice cua tat ca cac hoa don trong bang order
-
+select * from `order`;
 -- hien thi danh sach cac khach hang da mua hang va danh sach san pham duoc mua boi khach
 select  o.cId, c.cName, od.pId
 from `order` o
