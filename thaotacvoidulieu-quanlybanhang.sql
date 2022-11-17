@@ -2,11 +2,12 @@ use quanlybanhang;
 -- hien thi thong tin oID, oDate, oPrice cua tat ca cac hoa don trong bang order
 select * from `order`;
 -- hien thi danh sach cac khach hang da mua hang va danh sach san pham duoc mua boi khach
-select  o.cId, c.cName, od.pId
+select  o.oID, c.cName, od.pId, p.pName, od.odQTY
 from `order` o
 join `orderdetail` od on o.oID = od.oID
 join `product` p on od.pID = p.pID
-join `customer` c on c.cId = o.cId;
+join `customer` c on c.cId = o.cId
+order by oId asc;
 -- hien thi ten nhung khach hang khong mua bat ky san pham nao
 select cId, cName from `customer`
 where cId not in (select cId from `order`);
